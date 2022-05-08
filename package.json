@@ -1,0 +1,18 @@
+{
+  "name": "com.lujainb.unity-poc",
+  "version": "1.0.0",
+  "unity": "2019.4",
+  "displayName": "Tamatem SDK",
+  "description": "Tamatem SDK",
+  "author": "SiTech",
+  "homepage": "https://github.com/LujainB/unity-poc",
+  "keywords": [
+    "unity",
+    "native",
+    "utility"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/LujainB/unity-poc"
+  }
+}
