@@ -9,9 +9,5 @@
     "unity",
     "native",
     "utility"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/LujainB/unity-poc"
-  }
+  ]
 }
