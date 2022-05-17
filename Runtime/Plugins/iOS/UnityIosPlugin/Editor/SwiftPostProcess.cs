@@ -12,7 +12,6 @@ using System.Linq;
 
 public static class SwiftPostProcess
 {
-
     [PostProcessBuild]
     public static void OnPostProcessBuild(BuildTarget buildTarget, string buildPath)
     {
@@ -23,18 +22,9 @@ public static class SwiftPostProcess
             proj.ReadFromFile(projPath);
 
             var targetGuid = proj.TargetGuidByName(PBXProject.GetUnityTestTargetName());
-
-
             proj.SetBuildProperty(targetGuid, "ENABLE_BITCODE", "NO");
-
-
-
             proj.SetBuildProperty(targetGuid, "SWIFT_OBJC_BRIDGING_HEADER", "Libraries/Plugins/iOS/UnityIosPlugin/Source/UnityPlugin-Bridging-Header.h");
-
             proj.SetBuildProperty(targetGuid, "SWIFT_OBJC_INTERFACE_HEADER_NAME", "UnityIosPlugin-Swift.h");
-
-
-
             proj.AddBuildProperty(targetGuid, "LD_RUNPATH_SEARCH_PATHS", "@executable_path/Frameworks $(PROJECT_DIR)/lib/$(CONFIGURATION) $(inherited)");
             proj.AddBuildProperty(targetGuid, "FRAMERWORK_SEARCH_PATHS",
                 "$(inherited) $(PROJECT_DIR) $(PROJECT_DIR)/Frameworks");
@@ -43,11 +33,8 @@ public static class SwiftPostProcess
             proj.AddBuildProperty(targetGuid, "LD_DYLIB_INSTALL_NAME",
                 "@executable_path/../Frameworks/$(EXECUTABLE_PATH)");
             proj.AddBuildProperty(targetGuid, "DEFINES_MODULE", "YES");
-            proj.AddBuildProperty(targetGuid, "SWIFT_VERSION", "3.2");
+            proj.AddBuildProperty(targetGuid, "SWIFT_VERSION", "4");
             proj.AddBuildProperty(targetGuid, "COREML_CODEGEN_LANGUAGE", "Swift");
-
-
-
             proj.WriteToFile(projPath);
         }
     }
